@@ -1,0 +1,12 @@
+pool.jdbc.url1=jdbc:oracle:thin:@(DESCRIPTION = (CONNECT_TIMEOUT = 3)(RETRY_COUNT = 3)(ADDRESS = (PROTOCOL = TCP)(HOST = vipconsultapsie8appl)(PORT = 1521)) (CONNECT_DATA= (SERVER = DEDICATED) (SERVICE_NAME = svcpsie8)))
+pool.jdbc.user=A3558215SQL
+pool.jdbc.password=psie8_psie8!
+pool.validationQuery=SELECT 1 FROM DUAL
+pool.maxSize=100
+
+#QA3
+#pool.jdbc.url1=jdbc:oracle:thin:@svuxqa3vdb15:1521:QACON
+#pool.jdbc.user=PROATIVO_PROD
+#pool.jdbc.password=PROATIVO_PROD
+#pool.validationQuery=SELECT 1 FROM DUAL
+#pool.maxSize=100

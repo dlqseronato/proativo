@@ -1,0 +1,1 @@
+SELECT r.component_level FROM component_definition_ref r WHERE r.component_id = ?;

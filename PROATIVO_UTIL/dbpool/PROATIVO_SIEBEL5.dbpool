@@ -1,0 +1,5 @@
+pool.jdbc.url1=jdbc:oracle:thin:@(DESCRIPTION =(ADDRESS = (PROTOCOL = TCP)(HOST = vippcrmd1)(PORT = 1521))(ADDRESS = (PROTOCOL = TCP)(HOST = vippcrmd2)(PORT = 1521))(ADDRESS = (PROTOCOL = TCP)(HOST = vippcrmd3)(PORT = 1521))(ADDRESS = (PROTOCOL = TCP)(HOST = vippcrmd4)(PORT = 1521))(LOAD_BALANCE = yes)(CONNECT_DATA =(SERVER = DEDICATED)(SERVICE_NAME = crpsieb)))
+pool.jdbc.user=A3558215SQL
+pool.jdbc.password=JUNHO2017!
+pool.validationQuery=SELECT 1 FROM DUAL
+pool.maxSize=100

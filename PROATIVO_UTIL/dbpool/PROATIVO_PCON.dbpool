@@ -1,0 +1,20 @@
+#PRODUÇÃO
+#pool.jdbc.url1=jdbc:oracle:thin:@(DESCRIPTION =(ADDRESS = (PROTOCOL = TCP)(HOST = vippcrs27)(PORT = 1521))(ADDRESS = (PROTOCOL = TCP)(HOST = vippcrs28)(PORT = 1521))(LOAD_BALANCE = yes)(CONNECT_DATA =(SERVER = DEDICATED)(SERVICE_NAME=pcon)))
+#pool.jdbc.user=PROATIVO_PROD
+#pool.jdbc.password=pwd
+#pool.validationQuery=SELECT 1 FROM DUAL
+#pool.maxSize=100
+
+##QA3
+#pool.jdbc.url1=jdbc:oracle:thin:@svuxqa3vdb15:1521:QACON
+#pool.jdbc.user=PROATIVO_PROD
+#pool.jdbc.password=pwd
+#pool.validationQuery=SELECT 1 FROM DUAL
+#pool.maxSize=100
+
+#PRODUÇÃO
+pool.jdbc.url1=jdbc:oracle:thin:@(DESCRIPTION =(ADDRESS = (PROTOCOL = TCP)(HOST = vippcrs27)(PORT = 1521))(ADDRESS = (PROTOCOL = TCP)(HOST = vippcrs28)(PORT = 1521))(LOAD_BALANCE = yes)(CONNECT_DATA =(SERVER = DEDICATED)(SERVICE_NAME=pcon)))
+pool.jdbc.user=A3558215SQL
+pool.jdbc.password=Gnosrazi94!1
+pool.validationQuery=SELECT 1 FROM DUAL
+pool.maxSize=100

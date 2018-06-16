@@ -1,0 +1,1 @@
+select count(*) quantidade from SINCRONISMO_CARGA where RESPONSAVEL = ? ;

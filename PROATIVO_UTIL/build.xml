@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="iso-8859-1" ?>
+<project name="PROATIVO_UTIL" default="all" basedir=".">
+	<description>
+		Arquivo de compilacao e distribuicao de versoes do projeto PROATIVO_UTIL.
+	</description>
+
+	<!-- Configuração do build -->
+	<property name="path" location="build" />
+	<property name="path.deploy" location="deploy" />
+	<property name="path.build" location="build/proativo" />	
+	<property name="path.build.lib" location="${path.build}/lib" />
+	<property name="path.build.sql" location="${path.build}/sql" />
+	<property name="path.build.config" location="${path.build}/config" />
+	
+	<property name="path.config" location="${basedir}/config" />
+	<property name="path.bin" location="${basedir}/bin" />
+	<property name="path.lib" location="${basedir}/lib" />
+	<property name="path.sql" location="${basedir}/sql" />
+	<property name="path" location="${basedir}" />
+			
+	<property file="${path.config}/build.properties" />
+	
+	<!-- Configuração dos diretorios -->
+	<property name="path.build" location="build" />
+
+	<condition property="existDir">
+		<available type="dir" file="${path.build}" />
+	</condition>
+	<!-- Configuracao do CLASSPATH -->
+	<path id="compile.classpath">
+		<fileset dir="${path.lib}">
+			<include name="*.jar" /> 
+		</fileset>
+	</path>
+	<path id="dist.classpath">
+		<fileset dir="${path.lib}">
+			<include name="*.jar" /> 
+		</fileset>
+	</path>
+
+	<target name="all" depends="clean,folders,copy, dist, zip, cleanFolder" description="Cria um novo arquivo de distribuição (sobrescreve)" />
+
+	<target name="clean" description="Apaga o diretório de distribuição da versão.">
+		<delete dir="${path.bin}" />
+		<delete dir="${path.build}" />
+		<delete dir="${path}" />
+		<delete dir="${path.deploy}" />
+	</target>
+	
+	<target name="folders" description="Cria a estrutura de diretórios.">
+		<!-- Cria a estrutura de diretorios -->
+		<mkdir dir="${basedir}/build/proativo" />
+		<mkdir dir="${basedir}/bin" />
+	</target>
+	
+	<target name="copy" description="Copia os arquivos para o build">
+		<copy todir="${path.build.lib}">
+			<fileset dir="${path.lib}"/>
+		</copy>
+		<copy todir="${path.build.sql}">
+			<fileset dir="${path.sql}" />
+		</copy>
+		<copy todir="${path.build.config}">
+			<fileset dir="${path.config}" />
+		</copy>
+	</target>
+
+	<!-- Coloca os arquivos do diretorio {build}/${classes} no arquivo jar -->
+	<target name="dist" depends="folders" description="Cria os arquivos de distribuição">
+		
+		<tstamp>
+	        <format property="data" pattern="dd/MM/yyyy HH:mm" locale="pt,BR"/>
+	    </tstamp>
+		
+		<pathconvert property="string.classpath" pathsep=' '>
+		    <path refid="dist.classpath" />
+		    <map from="${path.lib}" to=".\lib" />
+		</pathconvert>
+		
+		<javac srcdir="${basedir}" destdir="${path.bin}" classpathref="compile.classpath" includeantruntime="false" encoding="cp1252" debug="yes" />
+		
+		<!-- Cria a distribuição de versão -->
+		<jar jarfile="${path.build}/lib/${build.title}.jar" basedir="${basedir}/bin" includes="**/*.class" compress="false">
+			<fileset file="build.properties" />
+			<manifest>
+				<attribute name="Manifest-Version" value="1.0" />
+				<attribute name="Class-Path" value="${string.classpath}" />
+				<attribute name="Build-User" value="${user.name}"/>
+				<attribute name="Build-Date" value="${data}"/>
+				<attribute name="Build-Version" value="${build.version}"/>
+			</manifest>
+		</jar>
+
+	</target>
+	
+	<target name="distLib" description="Cria os arquivos de distribuição">
+		
+		<tstamp>
+	        <format property="data" pattern="dd/MM/yyyy HH:mm" locale="pt,BR"/>
+	    </tstamp>
+		
+		<pathconvert property="string.classpath" pathsep=' '>
+		    <path refid="dist.classpath" />
+		    <map from="${path.lib}" to=".\lib" />
+		</pathconvert>
+		
+		<javac srcdir="${basedir}" destdir="${path.bin}" classpathref="compile.classpath" includeantruntime="false" encoding="cp1252" debug="yes" />
+		
+		<!-- Cria a distribuição de versão -->
+		<jar jarfile="${path.build}/${build.title}.jar" basedir="${basedir}/bin" includes="**/*.class" compress="false">
+			<fileset file="build.properties" />
+			<manifest>
+				<attribute name="Manifest-Version" value="1.0" />
+				<attribute name="Class-Path" value="${string.classpath}" />
+				<attribute name="Build-User" value="${user.name}"/>
+				<attribute name="Build-Date" value="${data}"/>
+				<attribute name="Build-Version" value="${build.version}"/>
+			</manifest>
+		</jar>
+
+	</target>
+	
+	<target name="zip">
+		<zip destfile="${path.build}.zip" basedir="${path.build}"/>
+	</target>
+	
+	<target name="cleanFolder" description="Apaga o diretório do build">
+		<delete dir="${path.build}" />
+	</target>
+</project>

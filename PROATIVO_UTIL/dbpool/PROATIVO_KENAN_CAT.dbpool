@@ -1,0 +1,5 @@
+pool.jdbc.url1=jdbc:oracle:thin:@SVUXP1B2:1521:PBCAT
+pool.jdbc.user=A3558215SQL
+pool.jdbc.password=*Vivo15@61317
+pool.validationQuery=SELECT 1 FROM DUAL
+pool.maxSize=100

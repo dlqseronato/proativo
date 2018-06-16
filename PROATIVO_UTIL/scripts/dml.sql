@@ -1,0 +1,1 @@
+Insert into PROATIVO_OWNER.PROATIVO_PARAMETROS (PARAMETRO,DESCRICAO,VALOR) values ('diretorioConfig','diretorio para os arquivos de configuracao','/app/gvt/scripts/proativo/config');

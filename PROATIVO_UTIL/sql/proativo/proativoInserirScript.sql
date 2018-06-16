@@ -1,0 +1,1 @@
+insert into proativo_owner.proativo_scripts (id_execucao, id_cenario, comando, base) values (?,?,?,?);

@@ -1,0 +1,21 @@
+INSERT
+INTO gvt_Cease_Account
+  (
+    Serv_Inst,
+    External_Acct_Id,
+    Disconect_Date,
+    Disconect_Acct,
+    Run_Status,
+    Ext_Id_Type_Inst,
+    Rotina
+  )
+  VALUES
+  (
+    ?,
+    ?,
+    ?,
+    ?,
+    ?,
+    ?,
+    ?
+  )

@@ -1,0 +1,17 @@
+pool.jdbc.url1=jdbc:oracle:thin:@svuxdvdb40:1521/DGFIN
+pool.jdbc.user=PROATIVO_OWNER
+pool.jdbc.password=manginiso
+pool.validationQuery=SELECT 1 FROM DUAL
+pool.maxSize=200
+
+#pool.jdbc.url1=jdbc:oracle:thin:@vipscancrs035:1521/igfin
+#pool.jdbc.user=G0024266SQL
+#pool.jdbc.password=vivo2016$
+#pool.validationQuery=SELECT 1 FROM DUAL
+#pool.maxSize=1
+
+#pool.jdbc.url1=jdbc:oracle:thin:@svuxqa3vdb60:1521/qagfin
+#pool.jdbc.user=PROATIVO_PROD
+#pool.jdbc.password=PROATIVO_PROD
+#pool.validationQuery=SELECT 1 FROM DUAL
+#pool.maxSize=5

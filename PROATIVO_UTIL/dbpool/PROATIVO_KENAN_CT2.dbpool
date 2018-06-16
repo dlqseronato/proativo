@@ -1,0 +1,18 @@
+pool.jdbc.url1=jdbc:oracle:thin:@SVUXP1B4:1521:PBCT2
+pool.jdbc.user=A3558215SQL
+pool.jdbc.password=&T&$2#I2h0yf
+pool.validationQuery=SELECT 1 FROM DUAL
+pool.maxSize=100
+
+#QA3
+#pool.jdbc.url1=jdbc:oracle:thin:@svuxqa3vdb63:1521:QACT2
+#pool.jdbc.user=A3558215SQL
+#pool.jdbc.password=EQLYMSLKGG
+#pool.validationQuery=SELECT 1 FROM DUAL
+#pool.maxSize=100
+
+#pool.jdbc.url1=jdbc:oracle:thin:@svuxqa3vdb63:1521:QACT2
+#pool.jdbc.user=G0024266sql
+#pool.jdbc.password=vivo2016$
+#pool.validationQuery=SELECT 1 FROM DUAL
+#pool.maxSize=2 
